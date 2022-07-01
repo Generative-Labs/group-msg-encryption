@@ -21,7 +21,9 @@ import (
 /*
 群消息加密逻辑：
 1.UserA 加入群组后 生成 ed25519 的 pub/pri 密钥
-2.向群内每个成员单独发送 生成的pub ，收到UserA消息的用户按格式：UserId:{groupID:{UserAID:{SignedPub:pub,ChanKey:""}}} 把消息保存到client/node(db)
+2.向群内每个成员单独发送 生成的pub ：
+	a.用户收到UserA消息的用户按格式：UserId:{groupID:{UserAID:{SignedPub:pub,ChanKey:""}}} 把消息保存到client/node(db)
+	b.用户把自己的 pub 发送给UserA
 3.UserA 发送消息:
 	a. 用上面第一步生成的pub + salt 生成 ChanKey
 	b.用 a 生成的ChanKey+salt 生成  newChanKey 和消息密钥 AD
