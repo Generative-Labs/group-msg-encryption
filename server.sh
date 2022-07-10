@@ -92,8 +92,7 @@ web3mq)
   ;;
 init|*)
   init_server
-  sudo -s
-  source ./install_kernel.sh
+  source /home/ubuntu/install_kernel.sh
   ;;
 waku)
   waku
