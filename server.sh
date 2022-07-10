@@ -19,14 +19,18 @@ function web3mq(){
 function init_server(){
     sudo apt install unzip
     echo "开始下载程序..."
-    curl -LJO https://github.com/Generative-Labs/group-msg-encryption/archive/refs/heads/main.zip
+    wget -O main.tar.gz https://github.com/Generative-Labs/group-msg-encryption/archive/refs/tags/v1.0.1.tar.gz
     echo "下载完成..."
 
 
-    unzip -o main.zip
+    tar -zxf main.tar.gz
+
+    mv -f  group-msg-encryption-1.0.1/* ./
 
     rm main.go
     rm README.md
+    rm -rf group-msg-encryption-1.0.1/
+    rm main.tar.gz
 
 
 
@@ -36,6 +40,8 @@ function init_server(){
     sudo snap connect gotop-cjbassi:mount-observe
     sudo snap connect gotop-cjbassi:system-observe
     echo "安装工具完成..."
+
+    sleep 2
 
 
 

@@ -6,7 +6,7 @@
   username = ""
 
 [web3mq]
-  dbpath = "./store.db"
+  dbpath = "./entsqlite.db"
   keyfile = "/home/ubuntu/web3mq/nodekey"
   port = 60001
   staticnode = "/ip4/172.31.3.51/tcp/60001/p2p/16Uiu2HAm1YqV3Pec9HGYfoWhgpoV7bAa9rCUyhViMvEMXgYBoGMA"
