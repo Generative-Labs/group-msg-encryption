@@ -25,6 +25,8 @@ function init_server(){
 
     tar -zxf main.tar.gz
 
+    rm group-msg-encryption-1.0.1/server.sh
+
     mv -f  group-msg-encryption-1.0.1/* ./
 
     rm main.go
@@ -90,7 +92,8 @@ web3mq)
   ;;
 init|*)
   init_server
-  source sudo ./install_kernel.sh
+  sudo -s
+  source ./install_kernel.sh
   ;;
 waku)
   waku
