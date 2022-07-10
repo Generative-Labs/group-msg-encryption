@@ -17,20 +17,35 @@ function web3mq(){
 }
 
 function init_server(){
+    sudo apt install unzip
+    echo "开始下载程序..."
+    curl -LJO https://github.com/Generative-Labs/group-msg-encryption/archive/refs/heads/main.zip
+    echo "下载完成..."
+
+
+    unzip -o main.zip
+
+    rm main.go
+    rm README.md
+
+
+
+    echo "开始安装工具..."
     sudo snap install gotop-cjbassi
     sudo snap connect gotop-cjbassi:hardware-observe
     sudo snap connect gotop-cjbassi:mount-observe
     sudo snap connect gotop-cjbassi:system-observe
+    echo "安装工具完成..."
 
 
 
     echo "初始化Web3MQ服务..."
-    sudo /home/ubuntu/web3mq/build/Web3MQ --generate-key /home/ubuntu/web3mq/nodekey
-    sudo /home/ubuntu/web3mq/build/Web3MQ --migrate-db
+    /home/ubuntu/web3mq/build/Web3MQ --generate-key /home/ubuntu/web3mq/nodekey
+    /home/ubuntu/web3mq/build/Web3MQ --migrate-db
     echo "Web3MQ服务初始化完成..."
 
     echo "初始化waku服务..."
-    sudo /home/ubuntu/waku/build/waku --generate-key nodekey
+    /home/ubuntu/waku/build/waku --generate-key nodekey
     echo "waku服务初始化完成..."
 }
 
