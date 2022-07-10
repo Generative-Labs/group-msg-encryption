@@ -2,7 +2,7 @@
 
 function waku(){
     echo "启动waku服务..."
-    sudo nohup /home/ubuntu/waku/build/waku -tcp-port=60001 -key-file=nodekey -metrics-server=true -metrics-server-address=0.0.0.0 -ws=true -ws-port=60002 -filter=true -keep-alive=1 -lightpush=true -keep-alive=5 nohupcmd.out 2>&1 &
+    sudo nohup /home/ubuntu/waku/build/waku -tcp-port=60001 -key-file=nodekey -metrics-server=true -metrics-server-address=0.0.0.0 -ws=true -ws-port=60002 -filter=true -keep-alive=1 -lightpush=true -staticnode=/ip4/54.212.164.102/tcp/60001/p2p/16Uiu2HAkveanx5LCmctKoBtQXkFsayAGxRq3LNpcgDmQ8MC96GRm -keep-alive=5 nohupcmd.out 2>&1 &
     echo "waku服务已启动..."
     sudo ps -ef | grep "waku"
     gotop-cjbassi
