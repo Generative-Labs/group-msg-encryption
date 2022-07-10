@@ -88,16 +88,20 @@ function testing(){
 
 case $1 in
 web3mq)
+  echo "web3mq"
   web3mq
   ;;
-init|*)
-  init_server
-  source /home/ubuntu/install_kernel.sh
-  ;;
 waku)
+  echo "waku"
   waku
   ;;
 test)
+  echo "test"
   testing
+  ;;
+init|*)
+  echo "init"
+  init_server
+  source /home/ubuntu/install_kernel.sh
   ;;
 esac
